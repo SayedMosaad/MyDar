@@ -1,0 +1,42 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Portfolio Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+    <!-- ======= Portfolio Details Section ======= -->
+    <section class="portfolio-details">
+        <div class="container">
+
+            <div class="portfolio-details-container">
+
+                <div class="owl-carousel portfolio-details-carousel">
+                    @foreach (var item in Model.Project.Photos)
+                    {
+                        <img src="~/images/projectimages/@item.Image" class="img-fluid" alt="" style="height:500px;">
+                    }
+                </div>
+
+                <div class="portfolio-info">
+                    <h3>Project information</h3>
+                    <ul>
+                        <li><strong>Category</strong>: @Model.Project.Category.Name</li>
+                        <li><strong>Client</strong>: @Model.Project.Client</li>
+                        <li><strong>Project date</strong>: @Model.Project.ProjectDate.ToShortDateString()</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="portfolio-description">
+                <h2>More Details</h2>
+                <p>
+                    @Model.Project.Description
+                </p>
+            </div>
+        </div>
+    </section>
+
+</main>

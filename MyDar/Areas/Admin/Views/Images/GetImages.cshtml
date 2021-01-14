@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MyDar.Areas.Admin.Models.Photos>
+
+@{
+    ViewData["Title"] = "Project Images";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row mt-2">
+   @foreach (var image in Model)
+   {
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <img class="img-thumbnail rounded" src="~/images/projectimages/@image.Image"  style="height:250px; width:275px "/>
+        <div>
+            <a asp-area="Admin" asp-controller="Images" asp-action="Edit" asp-route-id="@image.ID" class="fas fa-edit text-primary"></a>
+            <a asp-area="Admin" asp-controller="Images" asp-action="Delete" asp-route-id="@image.ID" class="fas fa-trash text-danger"></a>
+        </div>
+
+    </div>
+   }
+</div>
+
+

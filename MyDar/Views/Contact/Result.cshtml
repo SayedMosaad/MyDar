@@ -1,0 +1,70 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Message Sent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+                    @for (int i = 0; i < Model.Profiles.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="info-box">
+                                        <i class="bx bx-map"></i>
+                                        <h3>Our Address</h3>
+                                        <p>@Model.Profiles[i].Address1, @Model.Profiles[i].Address2, @Model.Profiles[i].Address3</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <i class="bx bx-envelope"></i>
+                                        <h3>Email Us</h3>
+                                        <p>@Model.Profiles[i].Email</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <i class="bx bx-phone-call"></i>
+                                        <h3>Call Us</h3>
+                                        <p>@Model.Profiles[i].Phone</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    }
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                    Your Message has been sent Successfuly <a asp-action="Index">Send Message</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+    <!-- ======= Map Section ======= -->
+    <section class="map mt-2">
+        <div class="container-fluid p-0">
+            <iframe src="https://goo.gl/maps/Yi8CHJD923pBb2VU7" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+    </section><!-- End Map Section -->
+
+</main><!-- End #main -->
+@section Scripts
+{
+    <partial name="_Validation" />
+}
+

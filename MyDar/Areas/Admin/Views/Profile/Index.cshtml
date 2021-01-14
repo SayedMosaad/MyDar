@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Profile>
+@using System.Text.Encodings.Web
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@{ int i = 0;}
+@foreach (var item in Model)
+{
+    if (i == 0)
+    {
+
+        <div class="row">
+            <div class="card col-md-12 mt-2">
+                <div class="card-header">
+                    Profile Details
+                </div>
+                <div class="card-body">
+                    <strong>
+                        <i class="fas fa-editbook"></i>
+                        About Us
+                    </strong>
+
+                    <p>@item.AboutUs</p>
+                    <hr />
+                    <strong>
+                        <i class="fas fa-editbook"></i>
+                        Our Vission
+                    </strong>
+                    <p>@item.Vission</p>
+                    <hr />
+                    <strong>
+                        <i class="fas fa-editbook"></i>
+                        Our Mission
+                    </strong>
+                    <p>@item.Mission</p>
+                    <hr />
+                    <strong>
+                        <i class="fas fa-editbook"></i>
+                        Our Care
+                    </strong>
+                    <p>@item.Care</p>
+                    <hr />
+                    <strong>
+                        <i class="fas fa-editbook"></i>
+                        Our Plan
+                    </strong>
+                    <p>@item.Plan</p>
+
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Profile" asp-area="Admin" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit Information</a>
+                </div>
+            </div>
+        </div>
+
+
+    }
+}
+

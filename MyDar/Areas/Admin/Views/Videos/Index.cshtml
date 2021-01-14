@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Videos>
+
+@{
+    ViewData["Title"] = "Video";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@{int i = 0; }
+@foreach (var item in Model)
+{
+    if(i==0)
+    {
+        <div class="card mt-2">
+        <div class="card-header">
+            <h3 class="card-title">Video Details</h3>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr class="d-flex">
+                    <td class="col-2">Video URL</td>
+                    <td class="col-10">@item.Video</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-2">@item.Title1</td>
+                    <td class="col-10">@item.Description1</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-2">@item.Title2</td>
+                    <td class="col-10">@item.Description2</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer">
+            <a asp-area="Admin" asp-controller="Videos" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit Details</a>
+        </div>
+    </div>
+
+    }
+}

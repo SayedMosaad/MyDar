@@ -1,0 +1,39 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Blog Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main">
+
+    <!-- ======= Blog Section ======= -->
+    <section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-6 entries">
+
+                    <article class="entry entry-single">
+                        <div class="entry-img">
+                            <img src="~/images/blogs/@Model.Blog.Image" alt="" class="img-fluid">
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a asp-action="BlogDetails" asp-controller="Blogs" asp-route-id="@Model.Blog.ID">@Model.Blog.Title</a>
+                        </h2>
+
+
+                        <div class="entry-content">
+                            @Model.Blog.Body
+
+                        </div>
+
+
+                    </article><!-- End blog entry -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

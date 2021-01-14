@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MyDar.Areas.Admin.Models.Blogs>
+
+@{
+    ViewData["Title"] = "Blogs";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a asp-area="Admin" asp-controller="blogs" asp-action="create" class=" btn btn-outline-info mt-2">Add New Blogs</a>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card m-2 col-sm-6 col-md-5">
+            <div class="card-header">
+                <h3 class="d-inline-block">@item.Title</h3>
+                <div class="float-right">
+                    <a asp-area="Admin" asp-controller="Blogs" asp-action="Edit" asp-route-id="@item.ID" class="fas fa-edit text-primary"></a>
+                    <a asp-area="Admin" asp-controller="Blogs" asp-action="Details" asp-route-id="@item.ID" class="fas fa-info-circle text-info"></a>
+                    <a asp-area="Admin" asp-controller="Blogs" asp-action="Delete" asp-route-id="@item.ID" class="fas fa-trash text-danger"></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>@item.Description </p>
+                <div>
+                    <div class="col-form-label"><a asp-area="Admin" asp-controller="Blogs" asp-action="Details" asp-route-id="@item.ID">Read more</a></div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

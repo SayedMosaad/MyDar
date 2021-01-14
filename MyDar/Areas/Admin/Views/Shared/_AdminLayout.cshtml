@@ -1,0 +1,202 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using MyDar.Areas.Admin.Models;
+@inject SignInManager<ApplicationUser> signInManager
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/fontawesome-iconpicker/css/all.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/lib/style.css" rel="stylesheet" />
+    <link href="~/simple-sidebar.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+
+        @{
+            string CtrName = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+            string AreaName = ViewContext.RouteData.Values["Area"].ToString().ToLower();
+        }
+        <!-- Sidebar -->
+        <div class="bg-dark border-right text-light" id="sidebar-wrapper">
+            <div class="sidebar-heading">My Dar </div>
+            <div class="navbar-expand">
+
+            </div>
+            <div class="list-group list-group-flush text-light">
+
+                <a asp-controller="home" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+
+                    <div>
+                        <i class="fas fa-home fa-1x mr-3 col-2"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+
+
+                <a asp-controller="Profile" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-info fa-1x mr-3 col-2"></i>
+                        <span>Profile</span>
+                    </div>
+                </a>
+
+
+                <a asp-controller="Services" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-cogs fa-1x mr-3 col-2"></i>
+                        <span>Services</span>
+                    </div>
+                </a>
+
+                <a asp-controller="Features" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-list-alt fa-1x mr-3 col-2"></i>
+                        <span>Features</span>
+                    </div>
+                </a>
+
+                <a asp-controller="Packages" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-money-bill-wave fa-1x mr-3 col-2"></i>
+                        <span>Packages</span>
+                    </div>
+                </a>
+
+                <a asp-controller="slider" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-images fa-1x mr-3 col-2"></i>
+                        <span>Slider</span>
+                    </div>
+                </a>
+
+                <a asp-controller="testemonials" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-smile fa-1x mr-3 col-2"></i>
+                        <span>Testemonials</span>
+                    </div>
+                </a>
+
+
+                <a asp-controller="blogs" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-blog fa-1x mr-3 col-2"></i>
+                        <span>Blogs</span>
+                    </div>
+                </a>
+
+                <a asp-controller="team" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-user-alt fa-1x mr-3 col-2"></i>
+                        <span>Team</span>
+                    </div>
+                </a>
+
+                <a asp-controller="Videos" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-play-circle fa-1x mr-3 col-2"></i>
+                        <span>Video</span>
+                    </div>
+                </a>
+
+                <a asp-controller="Categories" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-tasks fa-1x mr-3 col-2"></i>
+                        <span>Categories</span>
+                    </div>
+                </a>
+
+                <a asp-controller="Projects" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-place-of-worship fa-1x mr-3 col-2"></i>
+                        <span>Projects</span>
+                    </div>
+                </a>
+
+                <a asp-controller="Images" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-images fa-1x mr-3 col-2"></i>
+                        <span>Images</span>
+                    </div>
+                </a>
+
+                <a asp-controller="Requests" asp-action="index" asp-area="Admin"
+                   class="list-group-item list-group-item-action nav-link bg-dark text-light">
+                    <div>
+                        <i class="fas fa-envelope fa-1x mr-3 col-2"></i>
+                        <span>Requests</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+                <div class="float-left">
+                    <button class="btn btn-primary navbar-toggler-icon" id="menu-toggle"></button>
+                </div>
+                
+                <div class="float-lg-right">
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        <form method="post" asp-area="" asp-controller="Account" asp-action="Logout">
+                            <button type="submit" style="width:auto"
+                                    class="nav-link btn btn-link py-0 text-white" >
+                                Logout @User.Identity.Name
+                            </button>
+                        </form>
+                    }
+
+
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+
+        </div>
+        <!-- /#wrapper -->
+    </div>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/fontawesome-iconpicker/js/fontawesome-iconpicker.js"></script>
+
+    @RenderSection("Scripts", false)
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+
+</html>

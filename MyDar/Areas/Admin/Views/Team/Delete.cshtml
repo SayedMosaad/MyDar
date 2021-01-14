@@ -1,0 +1,63 @@
+﻿@model MyDar.Areas.Admin.Models.Team
+
+@{
+    ViewData["Title"] = "Delete Member";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card mt-2">
+    <div class="card-header">
+        <div>
+            <h4 class="float-left">@Model.Name</h4>
+            <div class="float-right">
+                
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <div class="float-left col-sm-6 col-md-6">
+            <table class="table">
+                <tr class="d-flex">
+                    <td class="col-3">Job</td>
+                    <td class="col-8">@Model.Job</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Biography</td>
+                    <td class="col-8">@Model.Bio</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Facebook</td>
+                    <td class="col-8">@Model.Facebook</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Twitte</td>
+                    <td class="col-8">@Model.Twitter</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Instagram</td>
+                    <td class="col-8">@Model.Instagram</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">LinkedIn</td>
+                    <td class="col-8">@Model.Linkedin</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class=" float-right col-sm-6 col-md-6">
+            <img src="~/images/team/@Model.Image" class=" rounded-circle" alt="@Model.Name" width="400" height="400">
+        </div>
+        <div class="clearfix"></div>
+        <div class="card-footer">
+            <form asp-action="Delete" method="post" >
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </form>
+        </div>
+
+    </div>
+</div>

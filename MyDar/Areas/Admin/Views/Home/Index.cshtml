@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewData["Title"] = "Admin Panel";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row mt-2">
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="Profile" asp-action="index">
+                    <div>
+                        <i class="fas fa-info-circle fa-4x col-4"></i>
+                        <span class="col-md-4 text-body">Profile</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="services" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-cogs fa-4x col-4 text-success"></i>
+                        <span class="col-md-4 text-body">Services</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="services" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-list-alt fa-4x col-4 text-warning"></i>
+                        <span class="col-md-4 text-body">Features</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="slider" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-images fa-4x col-4 text-danger"></i>
+                        <span class="col-md-4 text-body">Slider</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="packages" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-money-bill-wave-alt fa-4x col-4 text-dark"></i>
+                        <span class="col-md-4 text-body">Packages</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="Testemonials" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-smile fa-4x col-4 text-info"></i>
+                        <span class="col-md-4 text-body">Testemonials</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="blogs" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-blog fa-4x col-4 text-success"></i>
+                        <span class="col-md-4 text-body">Blogs</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="team" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-user-alt fa-4x col-4 text-primary"></i>
+                        <span class="col-md-4 text-body">Team</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="videos" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-play-circle fa-4x col-4 text-danger"></i>
+                        <span class="col-md-4 text-body">Video</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="Categories" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-tasks fa-4x col-4 text-warning"></i>
+                        <span class="col-md-4 text-body">Categories</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="Projects" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-place-of-worship fa-4x col-4 text-dark"></i>
+                        <span class="col-md-4 text-body">Projects</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="Images" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-images fa-4x col-4 text-info"></i>
+                        <span class="col-md-4 text-body">Images</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 mt-2">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a asp-area="Admin" asp-controller="Requests" asp-action="index" class="">
+                    <div>
+                        <i class="fas fa-envelope fa-4x col-4 text-success"></i>
+                        <span class="col-md-4 text-body">Requests</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

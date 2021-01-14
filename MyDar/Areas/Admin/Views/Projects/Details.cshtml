@@ -1,0 +1,50 @@
+﻿@model MyDar.Areas.Admin.Models.Projects
+
+@{
+    ViewData["Title"] = "Project Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-2">
+    <div class="card-header">
+        <div class="float-left">
+            @Model.Name
+        </div>
+        <div class="float-right">
+            <input type="hidden" asp-for="Image" />
+            <a asp-area="Admin" asp-controller="Projects" asp-action="Edit" asp-route-id="@Model.ID" class="fas fa-edit text-primary"></a>
+            <a asp-area="Admin" asp-controller="Projects" asp-action="Delete" asp-route-id="@Model.ID" class="fas fa-trash text-danger"></a>
+        </div>
+        
+    </div>
+    <div class="card-body">
+        <div class="float-left col-sm-6 col-md-5">
+            <img src="~/images/projects/@Model.Image" width="400" height="400" />
+        </div>
+        <div class="float-right col-sm-6 col-md-7">
+            <h2 class="card-title">Project Information</h2>
+            <table class="table">
+                <tr class="d-flex">
+                    <td class="col-3"><strong>Category</strong></td>
+                    <td class="col-9">@Model.Category.Name</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3"><strong>Client</strong></td>
+                    <td class="col-9">@Model.Client</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3"><strong>Project Date</strong></td>
+                    <td class="col-9">@Model.ProjectDate</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3"><strong>Description</strong></td>
+                    <td class="col-9">@Model.Description</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <div class="card-footer">
+        
+    </div>
+</div>

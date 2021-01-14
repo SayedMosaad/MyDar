@@ -1,0 +1,24 @@
+﻿@model Features
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2>Are you sure you want to delete this Feature?</h2>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">@Model.Title</h4>
+        <p class="card-text">@Model.Description</p>
+    </div>
+    <div class="ml-2">
+        <form asp-area="Admin" asp-controller="features" asp-action="ConfirmDelete" method="post">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-controller="features" asp-area="Admin" asp-action="Index" class="btn btn-primary">Cancel</a>
+        </form>
+    </div>
+
+</div>

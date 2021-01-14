@@ -1,0 +1,19 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+
+
+<h4>Contact Us</h4>
+<p>
+    @for (int i = 0; i < Model.Profiles.Count; i++)
+    {
+        if (i == 0)
+        {
+            @Model.Profiles[i].Address1 <br>
+            @Model.Profiles[i].Address2<br>
+            @Model.Profiles[i].Address3 <br><br>
+            <strong>Phone:</strong> @Model.Profiles[i].Phone<br>
+            <strong>Email:</strong> @Model.Profiles[i].Email<br>
+        }
+
+    }
+
+</p>

@@ -1,0 +1,49 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" style="min-height:600px">
+    <section class="portfolio">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        @foreach (var item in Model.Categories)
+                        {
+                            <li data-filter=".@item.Name.ToString().Replace(" ","")">@item.Name</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+                @foreach (var item in Model.Categories)
+                {
+                    @foreach (var subitem in item.Projects)
+
+                    {
+                        <div class="col-lg-4 col-md-6 @item.Name.ToString().Replace(" ","")">
+                            <div class="portfolio-item">
+                                <img src="~/images/projects/@subitem.Image" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h3><a href="~/images/projects/@subitem.Image" data-gall="portfolioGallery" class="venobox" title="App 1">@subitem.Name</a></h3>
+                                    <div>
+                                        <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="@subitem.Name"><i class="bx bx-plus"></i></a>
+                                        <a asp-controller="Portfolio" asp-action="portfoliodetails" asp-route-id="@subitem.ID" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+
+            </div>
+        </div>
+    </section>
+</main>

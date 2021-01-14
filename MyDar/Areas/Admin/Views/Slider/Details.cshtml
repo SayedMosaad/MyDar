@@ -1,0 +1,21 @@
+﻿@model Slider
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">@Model.Title</h3>
+    </div>
+    <div class="card-body">
+        <h2>Description</h2>
+        <p>@Model.Description</p>
+    </div>
+    <div class="card-footer">
+        <a asp-controller="slider" asp-action="Edit" asp-area="Admin" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a> |
+        <a asp-controller="slider" asp-area="Admin" asp-action="Index" class="btn btn-danger">Back</a>
+    </div>
+</div>

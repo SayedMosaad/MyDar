@@ -1,0 +1,22 @@
+﻿@model Features
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-2">
+    <div class="card-header">
+        @Model.Title
+    </div>
+    <div class="card-body">
+        <div class="float-left">
+            <p class="card-text">@Model.Description</p>
+        </div>
+        <img src="~/images/features/@Model.Image" class="rounded float-right" width="300" height="300" />
+    </div>
+    <div class="card-footer">
+        <a asp-area="Admin" asp-controller="features" asp-action="Edit" class="btn btn-primary">Edit</a>
+        <a asp-area="Admin" asp-controller="features" asp-action="index" class="btn btn-secondary">Back</a>
+    </div>
+</div>

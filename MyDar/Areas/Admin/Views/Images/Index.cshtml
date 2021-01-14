@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Projects>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<a asp-action="Create" asp-controller="Images" class="btn btn-outline-info mt-2">Add New Photo to Project</a>
+@foreach (var project in Model)
+{
+    <div class="card mt-2">
+        <div class="card-header">
+            <h3>@project.Name</h3>
+        </div>
+        <div class="card-body">
+            <div class="float-left">
+                @foreach (var subitem in project.Photos)
+                {
+                    if (project.Photos.Any())
+                    {
+                        <img class="img-thumbnail rounded" src="~/images/projectimages/@subitem.Image" style="height:100px; width:100px;" />
+
+                    }
+                    else
+                    {
+                        <p>There is no Photos for this prject</p>
+                    }
+
+                }
+            </div>
+            <div class="float-right">
+                <a asp-controller="Images" asp-action="GetImages" asp-route-id="@project.ID" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+            </div>
+
+        </div>
+        
+    </div>
+    
+}

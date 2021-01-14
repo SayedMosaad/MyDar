@@ -1,0 +1,21 @@
+﻿@model Services
+
+@{
+    ViewData["Title"] = "Service Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card mt-2">
+    <div class="card-header">
+        <h3 class="card-title">@Model.Title</h3>
+    </div>
+    <div class="card-body">
+        <p>@Model.Description</p>
+    </div>
+    <div class="card-footer">
+        <a asp-area="Admin" asp-controller="Services" asp-action="Edit" class="btn btn-primary">Edit</a>
+        <a asp-area="Admin" asp-controller="Services" asp-action="Index" class="btn btn-danger">Back</a>
+    </div>
+</div>
+

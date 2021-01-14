@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MyDar.Areas.Admin.Models.Slider>
+
+@{
+    ViewData["Title"] = "Slider List";
+}
+
+<br />
+
+<p>
+    <a asp-controller="Slider" asp-action="Create" asp-area="Admin" class="btn btn-info">Add Slider Data</a>
+</p>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card m-1 col-md-11">
+            <div class="card-header">
+                <h3>Title: @Html.DisplayFor(m => item.Title)</h3>
+            </div>
+            <div class="card-body">
+                <h4>Description</h4>
+                <p>@item.Description</p>
+            </div>
+            <div class="card-footer">
+                <a asp-controller="slider" asp-action="Details" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-info">View</a>
+                <a asp-controller="slider" asp-action="Edit" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                <a asp-controller="slider" asp-action="Delete" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    }
+</div>

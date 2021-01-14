@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>@ViewBag.Title</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    @*<link href="../Moderna/assets/img/apple-touch-icon.png" rel="apple-touch-icon">*@
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/lib/style.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-transparent">
+        <div class="container">
+
+            <div class="logo float-left">
+                <h1 class="text-light"><a href="index.html"><span>My Dar</span></a></h1>
+
+            </div>
+            @{string ctrName = ViewContext.RouteData.Values["controller"].ToString();}
+            <nav class="nav-menu float-right d-none d-lg-block">
+                <ul>
+                    @if (ctrName == "home")
+                    {
+                        <li class="active"><a asp-controller="home" asp-action="index">Home</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="home" asp-action="index">Home</a></li>
+                    }
+
+                    @if (ctrName == "about")
+                    {
+                        <li class="active"><a asp-controller="about" asp-action="index">About Us</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="about" asp-action="index">About Us</a></li>
+                    }
+
+                    @if (ctrName == "services")
+                    {
+                        <li class="active"><a asp-controller="services" asp-action="index">Services</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="services" asp-action="index">Services</a></li>
+                    }
+
+                    @if (ctrName == "portfolio")
+                    {
+                        <li class="active"><a asp-controller="portfolio" asp-action="index">Portfolio</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="portfolio" asp-action="index">Portfolio</a></li>
+                    }
+
+
+                    @if (ctrName == "team")
+                    {
+                        <li class="active"><a asp-controller="team" asp-action="index">Team</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="team" asp-action="index">Team</a></li>
+                    }
+
+                    @if (ctrName == "blogs")
+                    {
+                        <li class="active"><a asp-controller="blogs" asp-action="index">Blogs</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="blogs" asp-action="index">Blogs</a></li>
+                    }
+
+                    @if (ctrName == "contact")
+                    {
+                        <li class="active"><a asp-controller="contact" asp-action="index">Contact US</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="contact" asp-action="index">Contact US</a></li>
+                    }
+
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+    @RenderBody()
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>My Dar</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://www.facebook.com/Devenzaegypt/">Devenza</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/vendor/php-email-form/validate.js"></script>
+    <script src="~/vendor/venobox/venobox.min.js"></script>
+    <script src="~/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="~/vendor/counterup/counterup.min.js"></script>
+    <script src="~/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="~/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/lib/main.js"></script>
+    @RenderSection("Scripts",false)
+
+</body>
+
+</html>

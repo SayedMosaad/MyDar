@@ -1,0 +1,112 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "About Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+        <div class="container">
+
+            <div class="row">
+                @for (int i = 0; i < Model.Profiles.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <div class="col-lg-6">
+                            <img src="~/images/@Model.Profiles[i].Image" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0">
+                            <h3>About My Dar</h3>
+                            <p class="font-italic">
+                                @Model.Profiles[i].AboutUs
+                            </p>
+                            <ul>
+                                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                            </ul>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa qui officia deserunt mollit anim id est laborum
+                            </p>
+                        </div>
+                    }
+                }
+
+
+            </div>
+
+        </div>
+    </section>
+    
+
+
+    <section class="facts section-bg" data-aos="fade-up">
+        <div class="container">
+
+            <div class="row counters">
+
+                @for (int i = 0; i < Model.Profiles.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <div class="col-lg-3 col-6 text-center">
+                            <span data-toggle="counter-up">@Model.Profiles[i].ClientNum</span>
+                            <p>Clients</p>
+                        </div>
+                        <div class="col-lg-3 col-6 text-center">
+                            <span data-toggle="counter-up">@Model.Profiles[i].ProjectsNum</span>
+                            <p>Projects</p>
+                        </div>
+
+                        <div class="col-lg-3 col-6 text-center">
+                            <span data-toggle="counter-up">@Model.Profiles[i].HoursNum</span>
+                            <p>Hours Of Support</p>
+                        </div>
+
+                        <div class="col-lg-3 col-6 text-center">
+                            <span data-toggle="counter-up">@Model.Profiles[i].WorkerNum</span>
+                            <p>Hard Workers</p>
+                        </div>
+                    }
+                }
+
+            </div>
+
+        </div>
+    </section>
+    
+   
+    <section class="testimonials" data-aos="fade-up">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Tetstimonials</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="owl-carousel testimonials-carousel">
+                @for (int i = 0; i < Model.Testemonials.Count; i++)
+                {
+                    <div class="testimonial-item">
+                        <img src="~/images/testemonials/@Model.Testemonials[i].Image" class="testimonial-img" alt="">
+                        <h3>@Model.Testemonials[i].Name</h3>
+                        <h4>@Model.Testemonials[i].Job</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            @Model.Testemonials[i].Description
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </section>
+
+</main>

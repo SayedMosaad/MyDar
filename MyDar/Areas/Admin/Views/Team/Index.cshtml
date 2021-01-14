@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MyDar.Areas.Admin.Models.Team>
+
+@{
+    ViewData["Title"] = "Team";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a asp-action="Create" class="btn btn-outline-info mt-2">Add New Member</a>
+<div class="row mt-2">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 col-md-4 d-flex align-items-stretch">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h4 class="float-left">@item.Name</h4>
+                        <div class="float-right">
+                            <a class="fas fa-edit text-primary" asp-area="Admin" asp-controller="Team" asp-action="Edit" asp-route-id="@item.ID"></a>
+                            <a class="fas fa-info text-primary" asp-area="Admin" asp-controller="Team" asp-action="Details" asp-route-id="@item.ID"></a>
+                            <a class="fas fa-trash text-danger" asp-area="Admin" asp-controller="Team" asp-action="Delete" asp-route-id="@item.ID"></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="card-img justify-content-center">
+                    <img src="~/images/team/@item.Image" class="img-fluid rounded" alt="@item.Name" >
+                    <div class="social">
+                    </div>
+                </div>
+                <div class="card-body">
+                    
+                    <table class="table">
+                        <tr>
+                            <td class="card-title">@item.Job</td>
+                        </tr>
+                        <tr>
+                            <td class="card-text">@item.Bio</td>
+                        </tr>
+                    </table>
+                    
+                    
+                </div>
+            </div>
+
+
+        </div>
+    }
+</div>

@@ -1,0 +1,41 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Team";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main">
+    <!-- ======= Team Section ======= -->
+    <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="container">
+
+            <div class="row">
+                @foreach (var item in Model.Team)
+                {
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="~/images/team/@item.Image" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href="@item.Twitter"><i class="icofont-twitter"></i></a>
+                                    <a href="@item.Facebook"><i class="icofont-facebook"></i></a>
+                                    <a href="@item.Instagram"><i class="icofont-instagram"></i></a>
+                                    <a href="@item.Linkedin"><i class="icofont-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>@item.Name</h4>
+                                <span>@item.Job</span>
+                                <p>@item.Bio</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+        </div>
+    </section><!-- End Team Section -->
+
+</main><!-- End #main -->

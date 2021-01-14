@@ -1,0 +1,205 @@
+﻿@model MyDar.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+        <div class="container">
+            <div class="row">
+
+
+                @for (int i = 0; i < Model.Services.Count(); i++)
+                {
+                    var service = Model.Services;
+                    if (i == 0)
+                    {
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+                            <div class="icon-box icon-box-pink">
+                                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                <h4 class="title">@service[i].Title</h4>
+                                <p class="description">@service[i].Description</p>
+                            </div>
+                        </div>
+                    }
+                    else if (i == 1)
+                    {
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon-box icon-box-cyan">
+                                <div class="icon"><i class="bx bx-file"></i></div>
+                                <h4 class="title">@service[i].Title</h4>
+                                <p class="description">@service[i].Description</p>
+                            </div>
+                        </div>
+                    }
+                    else if (i == 2)
+                    {
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon-box icon-box-green">
+                                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                                <h4 class="title">@service[i].Title</h4>
+                                <p class="description">@service[i].Description</p>
+                            </div>
+                        </div>
+                    }
+                    else if (i == 3)
+                    {
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon-box icon-box-blue">
+                                <div class="icon"><i class="bx bx-world"></i></div>
+                                <h4 class="title">@service[i].Title</h4>
+                                <p class="description">@service[i].Description</p>
+                            </div>
+                        </div>
+
+                    }
+                }
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+        <div class="container">
+            <div class="row">
+                @for (int i = 0; i < Model.Videos.Count; i++)
+                {
+                    <div class="col-lg-6 video-box">
+
+                        <img src="~/images/why-us.jpg" class="img-fluid" alt="">
+                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                    </div>
+
+                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-fingerprint"></i></div>
+                            <h4 class="title"><a href="">@Model.Videos[i].Title1</a></h4>
+                            <p class="description">@Model.Videos[i].Description1</p>
+                        </div>
+
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-gift"></i></div>
+                            <h4 class="title"><a href="">@Model.Videos[i].Title2</a></h4>
+                            <p class="description">@Model.Videos[i].Description2</p>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======= Service Details Section ======= -->
+    <section class="service-details">
+        <div class="container">
+            <div class="row">
+                @for (int i = 0; i < Model.Profiles.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/images/service-details-1.jpg" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Our Mission</h5>
+                                    <p class="card-text">@Model.Profiles[i].Mission</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/images/service-details-2.jpg" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Our Plan</h5>
+                                    <p class="card-text">@Model.Profiles[i].Plan</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/images/service-details-3.jpg" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Our Vision</h5>
+                                    <p class="card-text">@Model.Profiles[i].Vission</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/images/service-details-4.jpg" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Our Care</h5>
+                                    <p class="card-text">@Model.Profiles[i].Care</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="pricing section-bg" data-aos="fade-up">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Packages</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row no-gutters">
+                @for (int i = 0; i < Model.Packages.Count; i++)
+                {
+                    if (i == 1)
+                    {
+                        <div class="col-lg-4 box featured">
+                            <h3>@Model.Packages[i].Title</h3>
+                            <h4>@Model.Packages[i].Price L E<span>per month</span></h4>
+                            @Model.Packages[i].Description
+
+                            <div>
+                                <a asp-controller="Contact" asp-action="index" class="get-started-btn">Get Started</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-lg-4 box">
+                            <h3>@Model.Packages[i].Title</h3>
+                            <h4>@Model.Packages[i].Price<span>per month</span></h4>
+                            @Model.Packages[i].Description
+                            <div>
+                                <a asp-controller="Contact" asp-action="index" class="get-started-btn">Get Started</a>
+                            </div>
+
+                        </div>
+                    }
+
+                }
+
+
+            </div>
+
+        </div>
+    </section><!-- End Pricing Section -->
+
+</main>

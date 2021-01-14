@@ -1,0 +1,23 @@
+﻿@model MyDar.Areas.Admin.Models.Testemonials
+
+@{
+    ViewData["Title"] = "Testemonial Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-2">
+    <div class="card-header">
+        <h3 class="card-title">@Model.Name</h3>
+    </div>
+    <div class="card-body d-flex">
+        <blockquote class="col-4">@Model.Description</blockquote>
+        <img src="~/images/testemonials/@Model.Image" class="col-4 rounded-circle img-thumbnail" />
+    </div>
+    <div class="card-title">
+        <a asp-area="Admin" asp-controller="Testemonials" asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary">Edit</a>
+        <a asp-area="Admin" asp-controller="Testemonials" asp-action="Index"  class="btn btn-success">Back</a>
+    </div>
+</div>
+
+
+

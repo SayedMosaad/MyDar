@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Services>
+
+@{
+    ViewData["Title"] = "Services";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a asp-area="Admin" asp-controller="Services" asp-action="Create" class="btn btn-outline-info">Add New Service</a>
+    </div>
+    <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr class="d-flex">
+                    <th class="col-2">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th class="col-8">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th class="col-2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="d-flex">
+                        <td class="col-2">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td class="col-8">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="col-2">
+                            <a asp-area="Admin" asp-controller="Services" asp-action="Edit" asp-route-id="@item.ID" class="fas fa-edit"></a> |
+                            <a asp-area="Admin" asp-controller="Services" asp-action="Details" asp-route-id="@item.ID" class="text-info fas fa-info"></a> |
+                            <a asp-area="Admin" asp-controller="Services" asp-action="Delete" asp-route-id="@item.ID" class="text-danger fas fa-trash"></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model MyDar.Areas.Admin.Models.Team
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-header">
+        <div>
+            <h4 class="float-left">@Model.Name</h4>
+            <div class="float-right">
+                <a class="fas fa-edit text-primary" asp-area="Admin" asp-controller="Team" asp-action="Edit" asp-route-id="@Model.ID"></a>
+                <a class="fas fa-trash text-danger" asp-area="Admin" asp-controller="Team" asp-action="Delete" asp-route-id="@Model.ID"></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    
+    <div class="card-body">
+
+        <div class="float-left col-sm-6 col-md-6">
+            <table class="table">
+                <tr class="d-flex">
+                    <td class="col-3">Job</td>
+                    <td class="col-8">@Model.Job</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Biography</td>
+                    <td class="col-8">@Model.Bio</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Facebook</td>
+                    <td class="col-8">@Model.Facebook</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Twitte</td>
+                    <td class="col-8">@Model.Twitter</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">Instagram</td>
+                    <td class="col-8">@Model.Instagram</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-3">LinkedIn</td>
+                    <td class="col-8">@Model.Linkedin</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class=" float-right col-sm-6 col-md-6">
+            <img src="~/images/team/@Model.Image" class="img-fluid rounded-circle" width="400" height="400" alt="@Model.Name">
+        </div>
+
+    </div>
+</div>

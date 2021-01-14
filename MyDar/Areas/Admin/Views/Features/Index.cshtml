@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MyDar.Areas.Admin.Models.Features>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-2">
+    <div class="card-header">
+        <a asp-area="Admin" asp-controller="features" asp-action="Create" class="btn btn-outline-info">Add New Feature</a>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr class="d-flex">
+
+                    <th class="col-2">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th class="col-6">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th class="col-2">
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th class="col-2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="d-flex">
+                        <td class="col-2">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td class="col-6">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="col-2">
+                            <img src="~/images/features/@item.Image" class="rounded img-thumbnail" width="100" height="100" />
+                        </td>
+                        <td class="col-2">
+                            <a asp-area="Admin" asp-controller="Features" asp-action="Edit" asp-route-id="@item.ID" class=" m-1 text-primary fas fa-edit"></a>
+                            <a asp-area="Admin" asp-controller="Features" asp-action="Details" asp-route-id="@item.ID" class=" m-1 text-info fas fa-info"></a>
+                            <a asp-area="Admin" asp-controller="Features" asp-action="Delete" asp-route-id="@item.ID" class=" m-1 text-danger fas fa-trash"></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

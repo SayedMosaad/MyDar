@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Categories>
+
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card mt-2">
+    <div class="card-header">
+        <a asp-area="Admin" asp-controller="Categories" asp-action="Create" class="btn btn-outline-info">Add New Category</a>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                            <hr />
+                            @foreach (var subitem in item.Projects)
+                            {
+                                <h5>@subitem.Name</h5>
+                            }
+                        </td>
+                        
+                        <td>
+                            <a asp-area="Admin" asp-controller="Categories" asp-action="Edit" asp-route-id="@item.ID" class="fas fa-edit text-primary"></a>
+                            <a asp-area="Admin" asp-controller="Categories" asp-action="Delete" asp-route-id="@item.ID" class="fas fa-trash text-danger"></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MyDar.Areas.Admin.Models.Testemonials>
+
+@{
+    ViewData["Title"] = "Testemonials";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<a asp-area="Admin" asp-controller="testemonials" asp-action="Create" class="btn btn-outline-info mt-2">Add New Openion</a>
+<div class="row text-center mt-2">
+    @foreach (var item in Model)
+    {
+        <div class="card col-sm-6 col-md-3 m-2">
+            <!--Avatar-->
+            <div class="avatar mx-auto">
+                <img src="~/images/testemonials/@item.Image" class="rounded-circle z-depth-1 img-fluid" width="150" height="150">
+            </div>
+            <!--Content-->
+            <h4 class="font-weight-bold dark-grey-text mt-4">@item.Name</h4>
+            <h6 class="font-weight-bold blue-text my-3">@item.Job</h6>
+            <p class="font-weight-normal dark-grey-text">
+                <i class="fas fa-quote-left pr-2"></i>@item.Description
+            </p>
+            <div class="card-footer">
+                <a asp-area="Admin" asp-controller="Testemonials" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary mr-2">Edit</a>
+                <a asp-area="Admin" asp-controller="Testemonials" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    }
+</div>
