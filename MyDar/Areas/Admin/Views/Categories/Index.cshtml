@@ -26,11 +26,6 @@
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Name)
-                            <hr />
-                            @foreach (var subitem in item.Projects)
-                            {
-                                <h5>@subitem.Name</h5>
-                            }
                         </td>
                         
                         <td>

@@ -13,9 +13,10 @@
             <thead>
                 <tr class="d-flex">
                     <th class="col-2">Name</th>
-                    <th class="col-3">Email</th>
+                    <th class="col-2">Phone</th>
+                    <th class="col-2">Email</th>
                     <th class="col-2">Subject</th>
-                    <th class="col-4">Message</th>
+                    <th class="col-3">Message</th>
                     <th class="col-1"></th>
                 </tr>
             </thead>
@@ -26,9 +27,10 @@
                     {
                         <tr class="d-flex">
                             <td class="col-2">@item.Name</td>
-                            <td class="col-3">@item.Email</td>
+                            <td class="col-2">@item.Phone</td>
+                            <td class="col-2">@item.Email</td>
                             <td class="col-2">@item.Subject</td>
-                            <td class="col-4">@item.Message</td>
+                            <td class="col-3">@item.Message</td>
                             <td class="col-1">
                                 <a asp-action="Details" asp-route-id="@item.ID" class="fas fa-info-circle text-info"></a>
                                 <a asp-action="Delete" asp-route-id="@item.ID" class="fas fa-trash-alt text-danger"></a>

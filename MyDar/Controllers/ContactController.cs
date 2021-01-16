@@ -37,6 +37,7 @@ namespace MyDar.Controllers
                 var request = new Request
                 {
                     Name = model.Name,
+                    Phone=model.Phone,
                     Email = model.Email,
                     Subject = model.Subject,
                     Message = model.Message

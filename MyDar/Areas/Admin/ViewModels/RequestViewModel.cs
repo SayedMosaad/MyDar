@@ -13,6 +13,9 @@ namespace MyDar.Areas.Admin.ViewModels
         public string Name { get; set; }
 
         [Required]
+        public string Phone { get; set; }
+
+        [Required]
         public string Subject { get; set; }
 
         [Required]

@@ -29,6 +29,9 @@ namespace MyDar.ViewModels
         public string Name { get; set; }
 
         [Required]
+        public string Phone { get; set; }
+
+        [Required]
         [EmailAddress(ErrorMessage = "Please enter a valid email")]
         public string Email { get; set; }
 
